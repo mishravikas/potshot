@@ -26,6 +26,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
+MAILCHIMP_API_KEY = '3f52cc73defed78f72e14a583d8ff895-us3'
 
 
 # Application definition
@@ -37,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app'
+    'app',
+    'mailchimp'
 )
 
 MIDDLEWARE_CLASSES = (
