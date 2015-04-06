@@ -14,7 +14,7 @@ def index(request):
         prev_url = prev_comic.id
     except:
         pass
-    return render(request, 'index.html',{'comic':comic, 'prev_url': prev_url})
+    return render(request, 'new_index.html',{'comic':comic, 'prev_url': prev_url})
 
 def comic(request, comic_id):
     print comic_id
@@ -37,7 +37,7 @@ def comic(request, comic_id):
     except:
         pass
     print comic.image.url
-    return render(request, 'index.html',{'comic':comic, 'prev_url': prev_url, 'next_url': next_url})
+    return render(request, 'new_index.html',{'comic':comic, 'prev_url': prev_url, 'next_url': next_url})
 
 def archive(request):
     comics = Comic.objects.all()

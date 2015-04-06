@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="left">
+                <div class="links archive"><a href="/archive/"><img src="/static/img/archive.png"></a></div>
+                <div class="links home"><a href="/"><img src="/static/img/home.png"></a></div>
+                <div class="links twitter"><img src="/static/img/twitter.png"></div>
+                <div class="links facebook"><img src="/static/img/facebook.png"></div>
+            </div>
+            <div class="right">
+                <div class="banner"><img src="/static/img/banner.png"></div>
+                <div class="board">
+                    <div class="content"><img src='{{comic.image.url}}' style="width:100%;"></div>
+                    {% if prev_url %}
+                        <a class="prev" href='/{{prev_url}}/'><img src="/static/img/back.png"></a>
+                    {% else %}
+                        <a class="prev"><img src="/static/img/back.png"></a>
+                    {% endif %}
+                    {% if next_url %}
+                    <a class="next" href='/{{next_url}}/'><img src="/static/img/next.png"></a>
+                    {% else %}
+                        <a class="next"><img src="/static/img/next.png"></a>
+                    {% endif %}
+                    
+                    
+                    <div class="stoneright"><img src="/static/img/stones2.png"></div>
+                    <div class="stoneleft"><img src="/static/img/stones.png"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
