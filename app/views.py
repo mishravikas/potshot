@@ -41,7 +41,7 @@ def comic(request, comic_id):
 
 def archive(request):
     comics = Comic.objects.all()
-    return render(request,'archive.html', {'comics':comics})
+    return render(request,'new_archive.html', {'comics':comics})
 
 def subscribe(request):
     if request.method == 'POST':
