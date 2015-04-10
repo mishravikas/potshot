@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css?rev=1">
         <meta property="og:image"         content="http://www.potshotcomic.com{{comic.image.url}}" />
             <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
@@ -16,8 +16,8 @@
             </div>
             <div class="right">
                 <div class="banner"><img src="/static/img/logo.png"></div>
-                <div class="board">
-                    <div class="content"><img src='{{comic.image.url}}' style="width:100%; height:100%; "></div>
+                <div class="board" style="height:{{comic.image.height}}px;">
+                    <div class="content"><img id="main_comic" src='{{comic.image.url}}' height="{{comic.image.height}}" style="width:100%;"></div>
                     {% if prev_url %}
                         <a class="prev" href='/{{prev_url}}/'><img src="/static/img/back.png"></a>
                     {% else %}
@@ -59,8 +59,14 @@
         }, function() {
             $(this).find('img').attr('src', '/static/img/FaceBook_Normal.png');
         });
+//         $(document).ready(function() {
+//     $("img").load(function() {
+//         var imgWidth = $("#main_comic").naturalHeight;
+//         console.log(imgWidth);
+//     });
+// });
         </script>
-<footer>
+<footer style="top:{{comic.image.height}}px;">
   <p>© Spacely Studio, LLC 2015</p>
 
 </footer>

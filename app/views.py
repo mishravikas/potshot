@@ -37,6 +37,7 @@ def comic(request, comic_id):
     except:
         pass
     print comic.image.url
+    print comic.image.height
     return render(request, 'new_index.html',{'comic':comic, 'prev_url': prev_url, 'next_url': next_url})
 
 def archive(request):
