@@ -7,37 +7,50 @@ MAILCHIMP_LIST_ID = 'dfd57ff352'
 
 def index(request):
     comic = Comic.objects.latest('id')
-    prev_id = comic.id - 1
-    prev_url = ''
-    try:
-        prev_comic = Comic.objects.get(id=prev_id)
-        prev_url = prev_comic.id
-    except:
-        pass
-    return render(request, 'new_index.html',{'comic':comic, 'prev_url': prev_url})
+    return HttpResponseRedirect('/%d/' %comic.id)
+
 
 def comic(request, comic_id):
     print comic_id
     comic =  get_object_or_404(Comic, id=comic_id)
     prev_id = comic.id - 1
-    next_id = comic.id + 1
     prev_url = ''
+    for prev_id in range(comic.id-1, 0, -1):
+        try:
+            prev_comic = Comic.objects.get(id=prev_id)
+            prev_url = prev_comic.id
+            break
+        except:
+            pass
+    if prev_id == 0:
+        prev_url = Comic.objects.latest('id').id         
+    print "prev_id: ", prev_id
+    print prev_url
+    latest_comic = Comic.objects.latest('id').id
+    next_id = 0
     next_url = ''
     comic_url = comic.image.url
-    try:
-        prev_comic = Comic.objects.get(id=prev_id)
-        prev_url = prev_comic.id
-    except:
-        pass
 
-    try:
-        next_comic = Comic.objects.get(id=next_id)
-        print "HERE"
+    for next_id in range(comic.id+1,latest_comic+1,1):
+        try:
+            next_comic = Comic.objects.get(id=next_id)
+            next_url = next_comic.id
+            break
+        except:
+            pass
+
+    if next_id == 0:
+        for i in range(1,latest_comic+1):
+            try:
+                next_comic = Comic.objects.get(id=i)
+                break
+            except:
+                pass
         next_url = next_comic.id
-    except:
-        pass
-    print comic.image.url
-    print comic.image.height
+        next_id = next_comic
+
+    print next_id
+
     return render(request, 'new_index.html',{'comic':comic, 'prev_url': prev_url, 'next_url': next_url})
 
 def archive(request):
