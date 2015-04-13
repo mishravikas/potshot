@@ -26,11 +26,11 @@ body {
 .banner{
 	width: 500px;
 	height: 100px;
-	margin: 20px 240px 0px;
+	margin: 20px 140px 0px;
 }
 .banner img{
-	height: 100px;
-	width: 500px;
+	height: 150px;
+	width: 700px;
 }
 .board{
 	width: 650px;
