@@ -104,7 +104,9 @@ body {
 	width: auto;
 }
 
-.archive {
+.archive img{
+	height: 90px;
+	width: 140px;
 	/*margin-left: 30%;*/
 }
 footer { 
