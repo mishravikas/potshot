@@ -16,18 +16,20 @@
             </div>
             <div class="right">
                 <div class="banner"><img src="/static/img/logo.png"></div>
-                <div class="board" style="height:{{comic.image.height}}px;">
-                    <div class="content"><img id="main_comic" src='{{comic.image.url}}' height="{{comic.image.height}}" style="width:100%;"></div>
                     {% if prev_url %}
                         <a class="prev" href='/{{prev_url}}/'><img src="/static/img/back.png"></a>
                     {% else %}
                         <a class="prev"><img src="/static/img/back.png"></a>
                     {% endif %}
-                    {% if next_url %}
+                                    {% if next_url %}
                     <a class="next" href='/{{next_url}}/'><img src="/static/img/next.png"></a>
                     {% else %}
                         <a class="next"><img src="/static/img/next.png"></a>
-                    {% endif %}
+                {% endif %}
+                    
+                <div class="board" style="height:{{comic.image.height}}px;">
+                    <div class="content"><img id="main_comic" src='{{comic.image.url}}' height="{{comic.image.height}}" style="width:100%;"></div>
+
                     
                     
                     <div class="stoneright"><img src="/static/img/stones2.png"></div>

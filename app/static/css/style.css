@@ -36,16 +36,16 @@ body {
 	width: 650px;
 	height: 100%;
 	border: 10px solid #302721;
-	margin: 0px 150px;
+	margin: -150px 150px;
 	background-color: #18100C;
 }
 .prev{
 	width: 100px;
 	height: 100px;
 	display: block;
-	position: absolute;
-	bottom: 250px;
-	left: 315px;
+	position: relative;
+	top: -550px;
+	right: -50px;
 }
 .prev img{
 	height: 100px;
@@ -55,9 +55,9 @@ body {
 	width: 100px;
 	height: 100px;
 	display: block;
-	position: absolute;
-	bottom: 250px;
-	left: 1083px;
+	position: relative;
+	top: -550px;
+	left: 809px;
 }
 .next img{
 	height: 100px;
