@@ -7,7 +7,8 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'app.views.index'),
     url(r'^archive/$', 'app.views.archive'),
-    url(r'^subscribe/$', 'app.views.subscribe'),
+    url(r'^contact/$', 'app.views.contact'),
+    url(r'^123dfg/$', 'app.views.dfg'),
     url(r'^(\d+)/$', 'app.views.comic'),
     url(r'^admin/', include(admin.site.urls)),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

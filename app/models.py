@@ -17,3 +17,9 @@ class Comic(models.Model):
 
     def __unicode__(self):
         return u'%d: %s' % (self.id, self.title)
+
+class Contact(models.Model):
+	name = models.CharField(max_length=32,blank=False)
+	email = models.CharField(max_length=64,blank=False)
+	subject = models.CharField(max_length=256,blank=False)
+	message = models.CharField(max_length=1024,blank=False)

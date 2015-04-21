@@ -1,44 +1,31 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css?rev=1">
-        <meta property="og:image"         content="http://www.potshotcomic.com{{comic.image.url}}" />
-            <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <title>Pot Shot Comic</title>
-
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    
+                    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
     </head>
     <body>
         <div class="wrapper">
             <div class="left">
-                <div class="links home"><a href="/"><img src="/static/img/home.png"></a></div>
+                                <div class="links home"><a href="/"><img src="/static/img/home.png"></a></div>
                 <div class="links archive"><a href="/archive/"><img src="/static/img/archive.png"></a></div>
                 <div class="links twitter"><a href="https://twitter.com/potshotcomic"><img src="/static/img/twitter.png"></a></div>
                 <div class="links facebook"><a href="https://www.facebook.com/pages/Pot-Shot-Comic/825693464181009"><img src="/static/img/FaceBook_Normal.png"></a></div>
             </div>
             <div class="right">
                 <div class="banner"><img src="/static/img/logo.png"></div>
-                    {% if prev_url %}
-                        <a class="prev" href='/{{prev_url}}/'><img src="/static/img/back.png"></a>
-                    {% else %}
-                        <a class="prev"><img src="/static/img/back.png"></a>
-                    {% endif %}
-                                    {% if next_url %}
-                    <a class="next" href='/{{next_url}}/'><img src="/static/img/next.png"></a>
-                    {% else %}
-                        <a class="next"><img src="/static/img/next.png"></a>
-                {% endif %}
-                    
-                <div class="board" style="height:{{comic.image.height}}px;">
-                    <div class="content"><img id="main_comic" src='{{comic.image.url}}' height="{{comic.image.height}}" style="width:100%;"></div>
-
-                    
-                    
-                    <div class="stoneright"><img src="/static/img/stones2.png"></div>
-                    <div class="stoneleft"><img src="/static/img/stones.png"></div>
+                <div class="archive">
+                <iframe src="/123dfg/" style="
+                    width: 700px;
+                    margin-top: 50px;
+                    margin-left: 80px;
+                    height: 500px;">
+                </iframe>
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
+         <script type="text/javascript">
          $('.home').hover(function() {
             $(this).find('img').attr('src', '/static/img/home_hover.png');
         }, function() {
@@ -62,12 +49,6 @@
         }, function() {
             $(this).find('img').attr('src', '/static/img/FaceBook_Normal.png');
         });
-//         $(document).ready(function() {
-//     $("img").load(function() {
-//         var imgWidth = $("#main_comic").naturalHeight;
-//         console.log(imgWidth);
-//     });
-// });
         </script>
         <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -79,8 +60,8 @@
   ga('send', 'pageview');
 
 </script>
-<footer style="top:{{comic.image.height}}px;">
-  <p>© Spacely Studio, LLC 2015 | <a href="/contact">Contact Us</a></p>
+        <footer style="top:500px;">
+  <p>© Spacely Studio, LLC 2015</p>
 
 </footer>
     </body>

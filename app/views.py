@@ -74,3 +74,15 @@ def subscribe(request):
         return HttpResponseRedirect('/subscribe/')
 
     return render(request, 'subscribe.html')
+
+def contact(request):
+    print "fssgsg"
+    if request.method == 'POST':
+        print yes
+
+        return HttpResponseRedirect('/')
+
+    return render(request,'contact.html')
+
+def dfg(request):
+    return render(request,'123dfg.html')
